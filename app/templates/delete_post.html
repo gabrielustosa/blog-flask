@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete post
+{% endblock %}
+
+{% block content %}
+    <div class="mx-auto">
+        <h1>Are you sure you want to delete '{{ post.title }}'?</h1>
+        <a class="btn btn-info" href="{{ url_for('home') }}">
+            Cancel
+        </a>
+        <form method="POST" action="{{ url_for('post_delete', post_id=post.id) }}">
+            <button class="btn btn-danger" type="submit">
+                Delete
+            </button>
+        </form>
+    </div>
+{% endblock %}
