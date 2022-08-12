@@ -14,8 +14,8 @@
                 <small class="text-muted">{{ post.date_posted.strftime('%d/%m/%Y') }}</small>
                 {% if post.author == current_user %}
                     <div class="d-flex my-2">
-                    <a class="btn btn-info text-white" href="{{ url_for('post_update', post_id=post.id) }}">Update</a>
-                    <a class="btn btn-danger ms-5" href="{{ url_for('post_delete', post_id=post.id) }}">Delete</a>
+                    <a class="btn btn-info text-white" href="{{ url_for('posts.post_update', post_id=post.id) }}">Update</a>
+                    <a class="btn btn-danger ms-5" href="{{ url_for('posts.post_delete', post_id=post.id) }}">Delete</a>
                     </div>
                 {% endif %}
             </div>

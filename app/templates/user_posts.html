@@ -25,9 +25,7 @@
     {% endfor %}
     {% for page in paginator.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
         {% if page %}
-            <a href="{{ url_for('main.home', page=page) }}" class="btn btn-outline-info mb-4 {% if paginator.page == page %}bg-info text-white{% endif %}">{{ page }}</a>
-        {% else %}
-
+            <a href="{{ url_for('posts.user_posts', username=username, page=page) }}" class="btn btn-outline-info mb-4 {% if paginator.page == page %}bg-info text-white{% endif %}">{{ page }}</a>
         {% endif %}
     {% endfor %}
 {% endblock %}
